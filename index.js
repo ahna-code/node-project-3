@@ -4,7 +4,7 @@ var colors = require('colors');
 fs.readFile('./tekst.txt', 'utf-8', function(err, data) {
   console.log('Dane przed zapisem!'.blue);
   console.log(data);
-  fs.appendFile('./tekst.txt',  '\nA tak wyglądają dane po zapisie!', function(err) {
+  fs.appendFile('./tekst.txt',  '\n A tak wyglądają dane po zapisie!', function(err) {
       if (err) throw err;
       console.log('Zapisano!'.blue);
       fs.readFile('./tekst.txt', 'utf-8', function(err, data) {
