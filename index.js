@@ -1,15 +1,11 @@
-var fs = require('fs');
-var colors = require('colors');
+'use strict';
 
-fs.readFile('./tekst.txt', 'utf-8', function(err, data) {
-  console.log('Dane przed zapisem!'.blue);
-  console.log(data);
-  fs.appendFile('./tekst.txt',  '\n A tak wyglądają dane po zapisie!', function(err) {
-      if (err) throw err;
-      console.log('Zapisano!'.blue);
-      fs.readFile('./tekst.txt', 'utf-8', function(err, data) {
-          console.log('Dane po zapisie'.blue)
-          console.log(data);
-      });
-  });
+const fs = require('fs');
+
+fs.readdir('./node-projects', 'utf-8', (err, files) => {
+  if (err) throw err;
+  fs.writeFile('./text.txt', files, err => {
+    if (err) throw err;
+    console.log('Zapisano!');
+  })
 });
